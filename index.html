@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hansestadt Stralsund – Gastronomie und Lieferservice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-o88AwQEfYq0q+1cmw6XfZOzrH2y1jzGi3Urw61++uDw=" crossorigin=""/>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,6 +25,11 @@
                 <label><input type="checkbox" id="filter-family"> Familienfreundlich</label>
                 <label><input type="checkbox" id="filter-delivers"> Lieferservice</label>
             </div>
+            <label for="provider-select">Kartenanbieter:</label>
+            <select id="provider-select">
+                <option value="osm">OpenStreetMap</option>
+                <option value="stamen">Stamen Toner</option>
+            </select>
             <ul id="list"></ul>
         </section>
         <section id="map"></section>

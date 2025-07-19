@@ -1,8 +1,27 @@
+let map;
+let tileLayer;
+
+function updateTileLayer() {
+    const provider = document.getElementById('provider-select')?.value || 'osm';
+    if (tileLayer) {
+        map.removeLayer(tileLayer);
+    }
+    if (provider === 'stamen') {
+        tileLayer = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
+            attribution: 'Map tiles by Stamen Design, CC BY 3.0 &mdash; Map data &copy; OpenStreetMap-Mitwirkende'
+        });
+    } else {
+        tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap-Mitwirkende'
+        });
+    }
+    tileLayer.addTo(map);
+}
+
 function initMap() {
-    const map = L.map('map').setView([54.3094, 13.0884], 14);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap-Mitwirkende'
-    }).addTo(map);
+    map = L.map('map').setView([54.3094, 13.0884], 14);
+    updateTileLayer();
+    document.getElementById('provider-select')?.addEventListener('change', updateTileLayer);
 
     establishments.forEach(est => {
         est.marker = L.marker([est.lat, est.lng]).addTo(map)
