@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hansestadt Stralsund – Gastronomie und Lieferservice</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-o88AwQEfYq0q+1cmw6XfZOzrH2y1jzGi3Urw61++uDw=" crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hansestadt Stralsund – Gastronomie & Lieferdienste</h1>
+    </header>
+    <main class="layout">
+        <section class="sidebar">
+            <input type="text" id="search" placeholder="Suche…">
+            <div class="filters">
+                <label><input type="checkbox" id="filter-restaurant" checked> Restaurant</label>
+                <label><input type="checkbox" id="filter-delivery" checked> Lieferdienst</label>
+                <label><input type="checkbox" id="filter-retail" checked> Einzelhandel</label>
+                <label><input type="checkbox" id="filter-vegan"> Vegetarisch/Vegan</label>
+                <label><input type="checkbox" id="filter-family"> Familienfreundlich</label>
+                <label><input type="checkbox" id="filter-delivers"> Lieferservice</label>
+            </div>
+            <ul id="list"></ul>
+        </section>
+        <section id="map"></section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-Vej58El0GmQSCyfHjKsxjTnp7VV6rUktcf7V1A/0z14=" crossorigin=""></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
